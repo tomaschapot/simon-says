@@ -9,7 +9,24 @@
 	font-family: monospace;
 	color: white;
 }
-
+.contenedor-start {
+	margin: 30px;
+	height: 100px;
+	display: flex;
+}
+.button-start {
+	padding: 5px;
+	margin: 25px auto;
+	color: black;
+	background-color: aliceblue;
+	border: none;
+	border-radius: 8px;
+	transition: 0.2s;
+}
+.button-start:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 110, 85);
+}
 .buttons-container {
 	display: flex;
 	flex-wrap: wrap;
