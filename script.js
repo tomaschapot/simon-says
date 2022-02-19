@@ -25,20 +25,15 @@ const buttonValues = {
 const options = [1, 2, 3, 4, 5, 6, 7, 8];
 const computerSelection = [];
 
-function computerTurn() {
-	//seleccion de botones por parte de la computadora
-	function buttonSelection(array) {
-		for (i = 0; i <= 4; i++) {
-			const selectedValue = array[Math.floor(Math.random() * array.length)];
-			computerSelection.push(selectedValue);
-			document.querySelector(`#button-${selectedValue}`).classList.add("glow");
-		}
-	}
-	buttonSelection(options);
-	console.log(computerSelection);
+//seleccion de botones por parte de la computadora
+function buttonSelection(array) {
+	const selectedValue = array[Math.floor(Math.random() * array.length)];
+	computerSelection.push(selectedValue);
+	document.querySelector(`#button-${selectedValue}`).classList.add("glow");
 }
-
-computerTurn();
+setInterval(() => {
+	buttonSelection(options);
+}, 2000);
 
 //Toma los inputs del jugador y los guarda en un array
 
