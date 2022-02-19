@@ -8,9 +8,10 @@ const $button5 = document.querySelector("#button-5");
 const $button6 = document.querySelector("#button-6");
 const $button7 = document.querySelector("#button-7");
 const $button8 = document.querySelector("#button-8");
+const $buttonStart = document.querySelector(".button-start");
 
 const options = [1, 2, 3, 4, 5, 6, 7, 8]; //opciones para seleccionar
-const computerSelection = []; //seleccion computadora
+let computerSelection = []; //seleccion computadora
 let counter = 0; //contador de partida
 let selectedButton = 0;
 
@@ -36,8 +37,12 @@ function runner(repeats) {
 	}
 }
 
-runner(5);
+//Start Game
 
+$buttonStart.onclick = function () {
+	computerSelection = []; //reset computer selection
+	runner(5);
+};
 //Toma los inputs del jugador y los guarda en un array
 
 const playerSelection = [];
