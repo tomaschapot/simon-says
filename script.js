@@ -15,8 +15,8 @@ let counter = 0; //contador de partida
 let selectedButton = 0;
 
 //seleccion de botones por parte de la computadora
-function buttonSelection(array) {
-	const selectedValue = array[Math.floor(Math.random() * array.length)];
+function buttonSelection(options) {
+	const selectedValue = options[Math.floor(Math.random() * options.length)];
 	computerSelection.push(selectedValue);
 	document.querySelector(`#button-${selectedValue}`).classList.add("glow");
 	console.log(computerSelection);
@@ -29,8 +29,9 @@ function runner(repeats) {
 	if (repeats > 0) {
 		buttonSelection(options);
 		let prevButton = selectedButton;
-		setTimeout(() => runner(repeats - 1), 1000);
+
 		setTimeout(() => clearBorder(prevButton), 1000);
+		setTimeout(() => runner(repeats - 1), 1000);
 	}
 }
 
