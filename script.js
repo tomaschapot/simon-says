@@ -126,7 +126,7 @@ $buttonStart.onclick = function () {
 			}
 			console.log(computerSelection, playerSelection);
 		}, playingTime);
-		playingTime = playingTime + 1100;
+		playingTime = playingTime + 2000;
 	}
 	startGame();
 };
