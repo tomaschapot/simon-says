@@ -48,8 +48,7 @@
 .button:hover {
 	box-shadow: white 0px 0px 20px;
 	border: solid white 5px;
-	width: 220px;
-	height: 220px;
+
 	transition: 0.5s;
 }
 
@@ -81,8 +80,8 @@
 .glow {
 	box-shadow: white 0px 0px 20px;
 	border: solid white 5px;
-	width: 220px;
-	height: 220px;
+	animation: jello;
+	animation-duration: 1s;
 	transition: 0.5s;
 }
 

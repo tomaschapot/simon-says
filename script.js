@@ -1,5 +1,8 @@
 //Buttons
 
+//Empezas a jugar
+const $buttonStart = document.querySelector(".button-start");
+
 const $button1 = document.querySelector("#button-1");
 const $button2 = document.querySelector("#button-2");
 const $button3 = document.querySelector("#button-3");
@@ -8,12 +11,18 @@ const $button5 = document.querySelector("#button-5");
 const $button6 = document.querySelector("#button-6");
 const $button7 = document.querySelector("#button-7");
 const $button8 = document.querySelector("#button-8");
-const $buttonStart = document.querySelector(".button-start");
+const $counterUser = document.querySelector(".counterusuario");
+const $counterComputer = document.querySelector(".countercomputer");
 
 const options = [1, 2, 3, 4, 5, 6, 7, 8]; //opciones para seleccionar
 let computerSelection = []; //seleccion computadora
-let counter = 0; //contador de partida
+let playerSelection = [];
 let selectedButton = 0;
+let round = 0;
+let counterUser = 0;
+let counterComputer = 0;
+let dificultyLevel = 2;
+let playingTime = 5000;
 
 //seleccion de botones por parte de la computadora
 function buttonSelection(options) {
@@ -32,20 +41,32 @@ function runner(repeats) {
 		let prevButton = selectedButton;
 		setTimeout(() => clearBorder(prevButton), 1000);
 		setTimeout(() => runner(repeats - 1), 1000);
-		counter = counter + 1;
-		document.querySelector(".counter").innerText = counter;
 	}
 }
 
 //Start Game
 
 $buttonStart.onclick = function () {
+	round = round + 1;
+	document.querySelector(".round").innerText = `Round Number: ${round}`;
 	computerSelection = []; //reset computer selection
-	runner(5);
+	playerSelection = []; //resets player selection
+	runner(dificultyLevel);
+	dificultyLevel = dificultyLevel + 1;
+
+	setTimeout(() => {
+		if (JSON.stringify(computerSelection) === JSON.stringify(playerSelection)) {
+			counterUser = counterUser + 1;
+			$counterUser.innerText = `User Score: ${counterUser}`;
+		} else {
+			counterComputer = counterComputer + 1;
+			$counterComputer.innerText = `Computer Score: ${counterComputer}`;
+		}
+		console.log(computerSelection, playerSelection);
+	}, playingTime);
+	playingTime = playingTime + 2000;
 };
 //Toma los inputs del jugador y los guarda en un array
-
-const playerSelection = [];
 
 $button1.onclick = function () {
 	playerSelection.push(1);
@@ -104,5 +125,3 @@ $button8.onclick = function () {
 		$button8.classList.remove("animation");
 	}, 1000);
 };
-
-function playerTurn() {}
