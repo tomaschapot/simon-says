@@ -29,9 +29,10 @@ function runner(repeats) {
 	if (repeats > 0) {
 		buttonSelection(options);
 		let prevButton = selectedButton;
-
 		setTimeout(() => clearBorder(prevButton), 1000);
 		setTimeout(() => runner(repeats - 1), 1000);
+		counter = counter + 1;
+		document.querySelector(".counter").innerText = counter;
 	}
 }
 
