@@ -1,5 +1,7 @@
 * {
 	background-color: black;
+	box-sizing: border-box;
+	color: white;
 }
 
 .title {
@@ -24,6 +26,13 @@
 	width: 200px;
 	flex: 0 0 auto;
 	border-radius: 10px;
+}
+.button:hover {
+	box-shadow: white 0px 0px 20px;
+	border: solid white 5px;
+	width: 220px;
+	height: 220px;
+	transition: 0.5s;
 }
 
 #button-1 {
@@ -53,4 +62,8 @@
 
 .glow {
 	box-shadow: white 0px 0px 20px;
+	border: solid white 5px;
+	width: 220px;
+	height: 220px;
+	transition: 0.5s;
 }
