@@ -31,9 +31,10 @@ function buttonSelection(array) {
 	computerSelection.push(selectedValue);
 	document.querySelector(`#button-${selectedValue}`).classList.add("glow");
 }
+
 setInterval(() => {
 	buttonSelection(options);
-}, 2000);
+}, 1000);
 
 //Toma los inputs del jugador y los guarda en un array
 

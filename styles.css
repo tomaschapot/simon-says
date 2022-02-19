@@ -1,5 +1,6 @@
 * {
 	background-color: black;
+	box-sizing: border-box;
 }
 
 .title {
@@ -53,4 +54,5 @@
 
 .glow {
 	box-shadow: white 0px 0px 20px;
+	border: solid white 5px;
 }
