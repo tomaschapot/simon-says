@@ -9,32 +9,32 @@ const $button6 = document.querySelector("#button-6");
 const $button7 = document.querySelector("#button-7");
 const $button8 = document.querySelector("#button-8");
 
-//Value to each button
-
-const buttonValues = {
-	button1: 1,
-	button2: 2,
-	button3: 3,
-	button4: 4,
-	button5: 5,
-	button6: 6,
-	button7: 7,
-	button8: 8,
-};
-
-const options = [1, 2, 3, 4, 5, 6, 7, 8];
-const computerSelection = [];
+const options = [1, 2, 3, 4, 5, 6, 7, 8]; //opciones para seleccionar
+const computerSelection = []; //seleccion computadora
+let counter = 0; //contador de partida
+let selectedButton = 0;
 
 //seleccion de botones por parte de la computadora
 function buttonSelection(array) {
 	const selectedValue = array[Math.floor(Math.random() * array.length)];
 	computerSelection.push(selectedValue);
 	document.querySelector(`#button-${selectedValue}`).classList.add("glow");
+	console.log(computerSelection);
+	selectedButton = document.querySelector(`#button-${selectedValue}`);
+}
+function clearBorder(selectedButton) {
+	selectedButton.classList.remove("glow");
+}
+function runner(repeats) {
+	if (repeats > 0) {
+		buttonSelection(options);
+		let prevButton = selectedButton;
+		setTimeout(() => runner(repeats - 1), 1000);
+		setTimeout(() => clearBorder(prevButton), 1000);
+	}
 }
 
-setInterval(() => {
-	buttonSelection(options);
-}, 1000);
+runner(5);
 
 //Toma los inputs del jugador y los guarda en un array
 
