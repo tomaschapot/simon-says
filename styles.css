@@ -26,6 +26,7 @@
 	width: 200px;
 	flex: 0 0 auto;
 	border-radius: 10px;
+	transition: 0.5s;
 }
 .button:hover {
 	box-shadow: white 0px 0px 20px;
@@ -66,4 +67,9 @@
 	width: 220px;
 	height: 220px;
 	transition: 0.5s;
+}
+
+.animation {
+	animation: jello;
+	animation-duration: 1s;
 }

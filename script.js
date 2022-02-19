@@ -45,27 +45,59 @@ const playerSelection = [];
 $button1.onclick = function () {
 	playerSelection.push(1);
 	console.log(playerSelection);
+	$button1.classList.add("animation");
+	setTimeout(() => {
+		$button1.classList.remove("animation");
+	}, 1000);
 };
 $button2.onclick = function () {
 	playerSelection.push(2);
+	$button2.classList.add("animation");
+	setTimeout(() => {
+		$button2.classList.remove("animation");
+	}, 1000);
 };
 $button3.onclick = function () {
 	playerSelection.push(3);
+	$button3.classList.add("animation");
+	setTimeout(() => {
+		$button3.classList.remove("animation");
+	}, 1000);
 };
 $button4.onclick = function () {
 	playerSelection.push(4);
+	$button4.classList.add("animation");
+	setTimeout(() => {
+		$button4.classList.remove("animation");
+	}, 1000);
 };
 $button5.onclick = function () {
 	playerSelection.push(5);
+	$button5.classList.add("animation");
+	setTimeout(() => {
+		$button5.classList.remove("animation");
+	}, 1000);
 };
 $button6.onclick = function () {
 	playerSelection.push(6);
+	$button6.classList.add("animation");
+	setTimeout(() => {
+		$button6.classList.remove("animation");
+	}, 1000);
 };
 $button7.onclick = function () {
 	playerSelection.push(7);
+	$button7.classList.add("animation");
+	setTimeout(() => {
+		$button7.classList.remove("animation");
+	}, 1000);
 };
 $button8.onclick = function () {
 	playerSelection.push(8);
+	$button8.classList.add("animation");
+	setTimeout(() => {
+		$button8.classList.remove("animation");
+	}, 1000);
 };
 
 function playerTurn() {}
