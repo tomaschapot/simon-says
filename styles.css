@@ -3,13 +3,36 @@
 	box-sizing: border-box;
 	color: white;
 }
+h1 {
+	font-size: 2rem;
+}
+h2 {
+	font-weight: 200;
+}
 
 .title {
 	text-align: center;
 	font-family: monospace;
 	color: white;
 }
-
+.contenedor-start {
+	margin: 30px;
+	height: 100px;
+	display: flex;
+}
+.button-start {
+	padding: 5px;
+	margin: 25px auto;
+	color: black;
+	background-color: aliceblue;
+	border: none;
+	border-radius: 8px;
+	transition: 0.2s;
+}
+.button-start:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgb(255, 110, 85);
+}
 .buttons-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -26,12 +49,12 @@
 	width: 200px;
 	flex: 0 0 auto;
 	border-radius: 10px;
+	transition: 0.5s;
 }
 .button:hover {
 	box-shadow: white 0px 0px 20px;
 	border: solid white 5px;
-	width: 220px;
-	height: 220px;
+
 	transition: 0.5s;
 }
 
@@ -63,7 +86,12 @@
 .glow {
 	box-shadow: white 0px 0px 20px;
 	border: solid white 5px;
-	width: 220px;
-	height: 220px;
+	animation: jello;
+	animation-duration: 1s;
 	transition: 0.5s;
+}
+
+.animation {
+	animation: jello;
+	animation-duration: 1s;
 }
