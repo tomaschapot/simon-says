@@ -187,6 +187,7 @@ h2 {
 	}
 	.general-container {
 		justify-content: center;
+		max-height: 100vh;
 	}
 }
 
@@ -200,7 +201,7 @@ h2 {
 	.contenedor-start {
 		margin: 0 auto;
 		align-items: center;
-		height: 70;
+		height: 70px;
 	}
 	.button-start {
 		height: 50px;
