@@ -109,6 +109,7 @@ function runner(repeats) {
 
 $buttonStart.onclick = function () {
 	function startGame() {
+		$buttonStart.classList.add("hidden");
 		round = round + 1;
 		document.querySelector(".round").innerText = `Round Number: ${round}`;
 		computerSelection = []; //reset computer selection
@@ -126,9 +127,13 @@ $buttonStart.onclick = function () {
 			) {
 				counterUser = counterUser + 1;
 				$counterUser.innerText = `User Score: ${counterUser}`;
+
+				$buttonStart.classList.remove("hidden");
 			} else {
 				counterComputer = counterComputer + 1;
 				$counterComputer.innerText = `Computer Score: ${counterComputer}`;
+
+				$buttonStart.classList.remove("hidden");
 			}
 			console.log(computerSelection, playerSelection);
 		}, playingTime);

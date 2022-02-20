@@ -4,6 +4,13 @@
 	margin: 0;
 	padding: 0;
 }
+.hidden {
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+}
 .general-container {
 	display: flex;
 	justify-content: space-between;
