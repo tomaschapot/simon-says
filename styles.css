@@ -206,12 +206,37 @@ h2 {
 	}
 }
 
-@media (max-width: 768px) {
-	
+@media (max-width: 730px) {
 	h2 {
 		font-size: 1rem;
 	}
+	.buttons-container {
+		padding: 20px;
+	}
+	.contenedor-start {
+		margin: 0 auto;
+		align-items: center;
+		height: 70;
+	}
+	.button-start {
+		height: 50px;
+		margin: 0 auto;
+	}
+}
 
+@media (max-width: 430px) {
+	.button {
+		height: 100px;
+		width: 100px;
+	}
+	.turn {
+		margin-top: 2px;
+	}
+}
 
-@media (max-width: 376px) {
+@media (max-width: 375px) {
+	.button {
+		height: 70px;
+		width: 70px;
+	}
 }
