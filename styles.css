@@ -90,15 +90,15 @@ h2 {
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 30px;
-	max-width: 1000px;
+	max-width: 50%;
 	margin: 0 auto;
 	align-items: center;
 	padding-top: 3rem;
 }
 
 .button {
-	height: 200px;
-	width: 200px;
+	height: 20vh;
+	width: 10vw;
 	flex: 0 0 auto;
 	border-radius: 10px;
 	transition: 0.5s;
@@ -151,7 +151,8 @@ h2 {
 	background-color: rgba(0, 0, 0, 0.664);
 	padding: 20px;
 	width: 300px;
-	margin: 3rem auto;
+	margin: 0 auto;
+	margin-top: 2rem;
 	border-radius: 5px;
 }
 
