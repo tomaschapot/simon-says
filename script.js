@@ -20,56 +20,56 @@ $button1.onclick = function () {
 	$button1.classList.add("animation");
 	setTimeout(() => {
 		$button1.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button2.onclick = function () {
 	playerSelection.push(2);
 	$button2.classList.add("animation");
 	setTimeout(() => {
 		$button2.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button3.onclick = function () {
 	playerSelection.push(3);
 	$button3.classList.add("animation");
 	setTimeout(() => {
 		$button3.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button4.onclick = function () {
 	playerSelection.push(4);
 	$button4.classList.add("animation");
 	setTimeout(() => {
 		$button4.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button5.onclick = function () {
 	playerSelection.push(5);
 	$button5.classList.add("animation");
 	setTimeout(() => {
 		$button5.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button6.onclick = function () {
 	playerSelection.push(6);
 	$button6.classList.add("animation");
 	setTimeout(() => {
 		$button6.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button7.onclick = function () {
 	playerSelection.push(7);
 	$button7.classList.add("animation");
 	setTimeout(() => {
 		$button7.classList.remove("animation");
-	}, 1000);
+	}, 400);
 };
 $button8.onclick = function () {
 	playerSelection.push(8);
 	$button8.classList.add("animation");
 	setTimeout(() => {
 		$button8.classList.remove("animation");
-	}, 1000);
+	}, 500);
 };
 
 const options = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -81,6 +81,7 @@ let counterUser = 0;
 let counterComputer = 0;
 let dificultyLevel = 2;
 let playingTime = 5000;
+let computerPlayingTime = 0;
 
 //functions
 
@@ -95,10 +96,11 @@ function clearBorder(selectedButton) {
 	selectedButton.classList.remove("glow");
 }
 function runner(repeats) {
+	computerPlayingTime = repeats * 1000;
 	if (repeats > 0) {
 		buttonSelection(options);
 		let prevButton = selectedButton;
-		setTimeout(() => clearBorder(prevButton), 1000);
+		setTimeout(() => clearBorder(prevButton), 700);
 		setTimeout(() => runner(repeats - 1), 1000);
 	}
 }
@@ -114,6 +116,10 @@ $buttonStart.onclick = function () {
 		runner(dificultyLevel);
 		dificultyLevel = dificultyLevel + 1;
 
+		document.querySelector(
+			".turn"
+		).innerText = `Computers Turn:${computerPlayingTime}`;
+
 		setTimeout(() => {
 			if (
 				JSON.stringify(computerSelection) === JSON.stringify(playerSelection)
@@ -126,6 +132,18 @@ $buttonStart.onclick = function () {
 			}
 			console.log(computerSelection, playerSelection);
 		}, playingTime);
+
+		let computerTimer = setInterval(() => {
+			computerPlayingTime = computerPlayingTime - 10;
+			document.querySelector(
+				".turn"
+			).innerText = `Computers Turn:${computerPlayingTime}`;
+			if (computerPlayingTime <= 0) {
+				clearInterval(computerTimer);
+				document.querySelector(".turn").innerText = "Your Turn";
+			}
+		}, 10);
+
 		playingTime = playingTime + 2000;
 	}
 	startGame();

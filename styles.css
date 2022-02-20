@@ -147,6 +147,13 @@ h2 {
 	animation: jello;
 	animation-duration: 0.7s;
 }
+.turn {
+	background-color: rgba(0, 0, 0, 0.664);
+	padding: 20px;
+	width: 300px;
+	margin: 3rem auto;
+	border-radius: 5px;
+}
 
 @media (max-width: 870px) {
 	h1 {
